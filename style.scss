@@ -18,9 +18,9 @@ html {
 }
 
 body {
-	background: $white;
+	background: $darkerGray;
   font: 18px/1.4 $helvetica;
-  color: $darkGray;
+  color: $lightGray;
 }
 
 .container {
@@ -32,7 +32,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
-  color: $darkerGray;
+  color: $lightGray;
   font-weight: bold;
 
   line-height: 1.7;
@@ -61,7 +61,14 @@ h3 {
 
 h4 {
   font-size: 18px;
-  color: $gray;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
 }
 
 p {

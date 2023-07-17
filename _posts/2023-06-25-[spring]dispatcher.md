@@ -1,3 +1,19 @@
+---
+layout: post
+title: Spring) Dispatcher-servlet 구조
+date: 2016-05-01 12:00:00
+categories: posts
+comments: true
+en: true
+description: An example post to this theme
+pt: /posts/example-post-pt-br/
+description_pt: Um post de exemplo para esse tema
+keywords: "Key, words, about, this, post, to, SEO"
+authors:
+- author1
+- author2
+---
+
 ### 1. Dispatcher-servlet 의 개념
 
 ---

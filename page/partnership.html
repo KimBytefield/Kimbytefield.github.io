@@ -15,29 +15,41 @@
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
   <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <link rel="icon" href="https://mobwithad.com/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="https://github.com/favicon.ico" type="image/x-icon">
+  <style>
+      .message {
+          position: fixed;
+          margin: 0 auto;
+          top: 50%;
+          left: 50%;
+          transform: translate( -50%,-50% );
+      }
+  </style>
 </head>
-<body class="bg-white">
-<div class="container-fluid bg-white">
-  <div class="row" id="coupangFrm"></div>
+<body>
+<div class="container">
+  <div class="message col-12 text-center">
+  <p>쿠팡 홈으로 이동중입니다. 잠시만 기다려주세요.</p>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated"></div>
+  </div>
+  </div>
 </div>
 <script>
   if (window.history.length === 1) {
     // Do something...
     console.log("a")
   }
+  var _time = 0;
+  var timer = setInterval(() => {
+    document.querySelector('.progress-bar').style.width = (_time++) + "0%";
+  }, 100)
 
-  document.addEventListener("DOMContentLoaded", function(){
-    var _container = document.querySelector('#coupangFrm');
-    var _ifrm = document.createElement('iframe');
-    _ifrm.frameborder="0";
-    _ifrm.referrerpolicy="unsafe-url";
-    _ifrm.browsingtopics;
-    _ifrm.src = "https://link.coupang.com/a/b5YnlO";
-    _ifrm.width = window.innerWidth;
-    _ifrm.height = window.innerHeight;
-    _container.append(_ifrm);
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+     clearInterval(timer);
+     location.href = "https://link.coupang.com/a/b5YnlO";
+    }, 1100);
   });
 </script>
 </body>

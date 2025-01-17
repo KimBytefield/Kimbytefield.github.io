@@ -15,6 +15,8 @@
 	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 	<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="../js/gridUtils.js"></script>
+	<script type="text/javascript" src="../js/excuteUtils.js"></script>
 
 	<link rel="icon" href="https://mobwithad.com/img/favicon.ico" type="image/x-icon">
 </head>
@@ -57,90 +59,16 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript">
-			$(document).ready(function () {
-				document.querySelector('#container').style = "overflow: hidden; height: " + (window.innerHeight - 50) + "px";
-				document.querySelector('#textareaContainer').style = "overflow: hidden; height: " + (window.innerHeight / 2 - 200) + "px";
-				document.querySelector('#iframeContainer').style = "overflow: hidden; height: " + (window.innerHeight / 2 - 200) + "px";
-			});
-			var convertType = "";
-			var excuteConvert = () => {
-				switch (convertType) {
-					case "url":
-						excuteUrl();
-						break;
-					case "script":
-					case "documnet":
-					default:
-						excuteScript();
-						break;
-				}
-			};
-			var excuteUrl = () => {
-				var s = document.querySelector('#textareaContainer textarea').value;
-				var f = document.querySelector('#iframeContainer iframe');
-				var ifrm = document.createElement('iframe');
-				ifrm.src = s;
-				ifrm.width = "100%";
-				ifrm.height = "100%";
-				ifrm.style = "position: fixed;top: 0;left: 0;border: none;z-index:99999";
-				f.src = s;
-			};
-			var excuteScript = () => {
-				var s = document.querySelector('#textareaContainer textarea').value;
-				var f = document.querySelector('#iframeContainer iframe');
-				var innerDocument = '<html><head><script src="https://code.jquery.com/jquery-latest.min.js"><\/script></head><body>';
-				innerDocument += s;
-				innerDocument += '</body>';
-
-				f.contentDocument.write(innerDocument);
-				f.contentDocument.close();
-			};
-			var selectTYpe = (text) => {
-				document.querySelector('#selectType').innerText = text;
-				convertType = text;
-			};
-		</script>
-		<script>
-			var isDark = false, isHorizontal = false;
-			var convertTheme = () => {
-				if(isDark){
-					isDark = false;
-					replaceClassName(document, 'bg-dark', 'bg-white');
-					replaceClassName(document, 'text-white', 'text-dark');
-					replaceClassName(document, 'btn-light', 'btn-dark');
-				} else {
-					isDark = true;
-					replaceClassName(document, 'bg-white', 'bg-dark');
-					replaceClassName(document, 'text-dark', 'text-white');
-					replaceClassName(document, 'btn-dark', 'btn-light');
-				}
-			}
-			var convertRotate = () => {
-				var container = document.querySelector('#bodyContainer');
-				if(isHorizontal){
-					isHorizontal = false;
-					replaceClassName(container, 'col-6', 'col-12');
-				} else {
-					isHorizontal = true;
-					replaceClassName(container, 'col-12', 'col-6');
-				}
-			}
-
-			var replaceClassName = (target, asIS, toBe) => {
-				var targetArr = target.getElementsByClassName(asIS);
-				if(targetArr != undefined){
-					var length = targetArr.length;
-					for(var i = length-1; i >= 0; i--) {
-						var className = targetArr[i].className;
-						targetArr[i].className = className.replaceAll(asIS, toBe);
-					}
-				}
-			}
-		</script>
 		<div class="col-12" id="footer">
 			<iframe class="my-2" src="./footer.html" width="100%" height="140" frameborder="0" scrolling="no"></iframe>
 		</div>
 	</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			document.querySelector('#container').style = "overflow: hidden; height: " + (window.innerHeight - 50) + "px";
+			document.querySelector('#textareaContainer').style = "overflow: hidden; height: " + (window.innerHeight / 2 - 200) + "px";
+			document.querySelector('#iframeContainer').style = "overflow: hidden; height: " + (window.innerHeight / 2 - 200) + "px";
+		});
+	</script>
 </body>
 </html>

@@ -19,9 +19,9 @@
 </head>
 <body>
 	<div class="container-fluid p-0 bg-white" id="container">
-		<div class="col-12 d-flex py-3 bg-secondary">
-			<div class="col-3 dropdown">
-				<button type="button" id="selectType" class="btn btn-primary dropdown-toggle col-12" data-toggle="dropdown">
+		<div class="row d-flex p-3 bg-secondary">
+			<div class="col-sm-12 col-xl-3 dropdown">
+				<button class="btn btn-primary dropdown-toggle col-12" type="button" id="selectType" data-toggle="dropdown">
 					input type
 				</button>
 				<div class="dropdown-menu">
@@ -30,18 +30,18 @@
 					<a class="dropdown-item" href="javascript:selectTYpe('document')">document</a>
 				</div>
 			</div>
-			<div class="col-4 btn-group ">
+			<div class="col-lg-4 col-sm-12 btn-group ">
 				<button type="button" class="btn btn-dark border" onclick="convertRotate()">SCREEN ROTATE <i class="fas fa-th-large"></i></button>
 				<button type="button" class="btn btn-dark border" onclick="convertTheme()">THEME <i class="fa fa-adjust"></i></button>
 			</div>
-			<div class="col-5 align-center text-center">
+			<div class="col-lg-5 col-sm-12 align-center text-center">
 				<button type="button" class="btn btn-danger col-12" onClick="javascript:excuteConvert()">RUN <i class=" far fa-caret-square-right"></i></button>
 			</div>
 		</div>
 		<div class="col-12 pt-3">
 			<p class="text-dark">※ URL 또는 SCRIPT를 삽입하고 전환버튼을 클릭하세요.</p>
 		</div>
-		<div class="col-12 px-5" id="bodyContainer">
+		<div class="col-12 px-lg-5" id="bodyContainer">
 			<div class="align-center text-center row d-flex">
 				<div class="col-12">
 					<div id="textareaContainer">
@@ -137,9 +137,9 @@
 				}
 			}
 		</script>
-		<div class="col-12">
+		<div class="col-12" id="footer">
 			<iframe class="my-2" src="./footer.html" width="100%" height="140" frameborder="0" scrolling="no"></iframe>
 		</div>
-</div>
+	</div>
 </body>
 </html>

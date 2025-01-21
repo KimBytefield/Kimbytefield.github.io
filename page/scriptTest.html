@@ -24,8 +24,8 @@
 	<div class="container-fluid p-0 bg-white" id="container">
 		<div class="row d-flex p-3 bg-secondary">
 			<div class="col-sm-12 col-xl-3 dropdown">
-				<button class="btn btn-primary dropdown-toggle col-12" type="button" id="selectType" data-toggle="dropdown">
-					input type
+				<button class="btn btn-light dropdown-toggle col-12" type="button" id="selectType" data-toggle="dropdown">
+					Input Type
 				</button>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="javascript:selectTYpe('url')">url</a>
@@ -60,14 +60,14 @@
 			</div>
 		</div>
 		<div class="col-12" id="footer">
-			<iframe class="my-2" src="./footer.html" width="100%" height="140" frameborder="0" scrolling="no"></iframe>
+			<iframe class="my-2" src="./footer.html" width="100%" height="100" frameborder="0" scrolling="no"></iframe>
 		</div>
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function () {
-			document.querySelector('#container').style = "overflow: hidden; height: " + (window.innerHeight - 50) + "px";
-			document.querySelector('#textareaContainer').style = "overflow: hidden; height: " + (window.innerHeight / 2 - 200) + "px";
-			document.querySelector('#iframeContainer').style = "overflow: hidden; height: " + (window.innerHeight / 2 - 200) + "px";
+			document.querySelector('#container').style = "overflow: hidden;min-height: 800px; height: " + (window.innerHeight - 50) + "px";
+			document.querySelector('#textareaContainer').style = "overflow: hidden; min-height: 300px;height: " + (window.innerHeight / 2 - 200) + "px";
+			document.querySelector('#iframeContainer').style = "overflow: hidden; min-height: 300px;height: " + (window.innerHeight / 2 - 200) + "px";
 		});
 	</script>
 </body>

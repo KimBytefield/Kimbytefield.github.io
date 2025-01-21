@@ -75,12 +75,15 @@
 				</div>
 			</div>
 		</div>
+			<div class="col-12" id="footer">
+				<iframe class="my-2" src="./footer.html" width="100%" height="140" frameborder="0" scrolling="no"></iframe>
+			</div>
 	</div>
 	<script type="text/javascript">
     $(document).ready(function () {
-      document.querySelector('#container').style = "overflow: hidden; height: " + (window.innerHeight - 50) + "px";
-      document.querySelector('#textareaContainer').style = "overflow: hidden; height: " + (window.innerHeight / 2 - 200) + "px";
-      document.querySelector('#textContainer').style = "overflow: hidden; height: " + (window.innerHeight / 2 - 200) + "px";
+      document.querySelector('#container').style = "overflow: hidden; min-height: 800px;height: " + (window.innerHeight - 50) + "px";
+      document.querySelector('#textareaContainer').style = "overflow: hidden; min-height: 300px;height: " + (window.innerHeight / 2 - 200) + "px";
+      document.querySelector('#textContainer').style = "overflow: hidden; min-height: 300px;height: " + (window.innerHeight / 2 - 200) + "px";
     });
 	</script>
 </body>

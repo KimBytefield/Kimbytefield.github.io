@@ -70,7 +70,7 @@ var optimize = () => {
   var s = document.querySelector('#textareaContainer textarea').value;
   var level = document.querySelector('#selectType').value;
   var jsonData = {
-    js_code: s,
+    js_code: encodeURIComponent(s),
     compilation_level: level,
     output_format: 'text',
     output_info: 'compiled_code'

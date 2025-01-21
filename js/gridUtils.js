@@ -15,7 +15,7 @@ var excuteUrl = () => {
   var s = document.querySelector('#textareaContainer textarea').value;
   var f = document.querySelector('#iframeContainer iframe');
   var ifrm = document.createElement('iframe');
-  ifrm.src = encodeURIComponent(s);
+  ifrm.src = s;
   ifrm.width = "100%";
   ifrm.height = "100%";
   ifrm.style = "position: fixed;top: 0;left: 0;border: none;z-index:99999";

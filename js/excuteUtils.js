@@ -68,9 +68,10 @@ var xhrRequest = function (method, uri, data, callback) {
 * */
 var optimize = () => {
   var s = document.querySelector('#textareaContainer textarea').value;
+  var level = document.querySelector('#selectType').value;
   var jsonData = {
     js_code: s,
-    compilation_level: 'WHITESPACE_ONLY',
+    compilation_level: level,
     output_format: 'text',
     output_info: 'compiled_code'
   }

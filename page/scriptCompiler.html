@@ -17,13 +17,22 @@
 			src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="../js/gridUtils.js"></script>
 	<script type="text/javascript" src="../js/excuteUtils.js"></script>
+	<style>
+		.hide {
+			display: none;
+		}
+		.show {
+			display: block;
+		}
+	</style>
+
 	<link rel="icon" href="https://mobwithad.com/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 	<div class="container-fluid p-0 bg-white" id="container">
 		<div class="row d-flex p-3 bg-secondary">
 			<div class="col-sm-12 col-xl-3 dropdown">
-				<button class="btn btn-primary dropdown-toggle col-12" type="button" id="selectType" data-toggle="dropdown">
+				<button class="btn btn-light dropdown-toggle col-12" type="button" id="selectType" data-toggle="dropdown">
 					Optimization
 				</button>
 				<div class="dropdown-menu">
@@ -38,31 +47,33 @@
 				<button type="button" class="btn btn-dark border" onclick="convertTheme()">THEME <i class="fa fa-adjust"></i>
 				</button>
 			</div>
-			<div class="col-lg-5 col-sm-12 align-center text-center">
-				<button type="button" class="btn btn-danger col-12" onClick="javascript:optimize()">Compile <i
-						class=" far fa-caret-square-right"></i></button>
+			<div class="col-lg-5 col-sm-12 d-flex">
+				<button type="button" class="btn btn-danger col-6" onClick="javascript:compile()">Compile <i
+						class="far fa-caret-square-right"></i></button>
+				<button type="button" class="btn btn-warning col-6" onClick="javascript:reset()">Reset <i
+						class="far fa-trash-alt"></i></button>
 			</div>
 		</div>
 		<div class="col-12 pt-3">
 			<p class="text-dark">※ 스크립트를 삽입하고 Complie 버튼을 클릭하세요.</p>
 		</div>
 		<div class="col-12 px-lg-5" id="bodyContainer">
-			<div class="align-center text-center row d-flex">
+			<div class="row d-flex">
 				<div class="col-12">
 					<div id="textareaContainer">
-							<textarea row=50 class="horizontal border bg-white text-dark" style="height: 100%; width:100%; resize:none;"
+							<textarea row=50 class="horizontal border bg-white text-dark p-1" style="height: 100%; width:100%; resize:none;"
 												placeholder="입력해주세요."></textarea>
 					</div>
 				</div>
 				<div class="col-12">
-					<div id="textContainer">
-						<iframe class="border" width="100%" height="100%"></iframe>
+					<div class="border p-1" id="textContainer">
+						<iframe width="100%" height="100%" frameborder="0"></iframe>
+					</div>
+					<div id="copy">
+						<button type="button" class="btn btn-success col-lg-12 my-2 hide" onclick="copy();">copy</button>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="">
-			<button type="button" class="btn btn-warning col-12 my-2" onclick="copy();">copy</button>
 		</div>
 	</div>
 	<script type="text/javascript">

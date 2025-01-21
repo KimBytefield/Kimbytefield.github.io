@@ -66,18 +66,34 @@ var xhrRequest = function (method, uri, data, callback) {
 * Compile
 * lib : https://closure-compiler.appspot.com/compile
 * */
-var optimize = () => {
+var compile = () => {
   var s = document.querySelector('#textareaContainer textarea').value;
   var level = document.querySelector('#selectType').value;
-  var jsonData = {
-    js_code: encodeURIComponent(s),
-    compilation_level: level,
-    output_format: 'text',
-    output_info: 'compiled_code'
+  if(level != ''){
+    var jsonData = {
+      js_code: encodeURIComponent(s),
+      compilation_level: level,
+      output_format: 'text',
+      output_info: 'compiled_code'
+    }
+    xhrRequest('POST', 'https://closure-compiler.appspot.com/compile', Object.keys(jsonData).map(key => `${key}=${jsonData[key]}`).join('&'), function (e) {
+      document.querySelector('#textContainer').innerText = e;
+      replaceClassName(document.querySelector('#copy'),"hide","show");
+    });
+  } else {
+    alert('You must select to Optimization!!');
   }
-  xhrRequest('POST', 'https://closure-compiler.appspot.com/compile', Object.keys(jsonData).map(key => `${key}=${jsonData[key]}`).join('&'), function (e) {
-    document.querySelector('#textContainer').innerText = e;
-  });
+}
+/*
+* Compile
+* lib : https://closure-compiler.appspot.com/compile
+* */
+var reset = () => {
+  document.querySelector('#textareaContainer textarea').value = '';
+  document.querySelector('#selectType').value = '';
+  document.querySelector('#selectType').innerText = 'Optimization';
+  document.querySelector('#textContainer').innerText = '';
+  replaceClassName(document.querySelector('#copy'),"show","hide");
 }
 
 var copy = () => {

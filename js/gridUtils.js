@@ -35,5 +35,6 @@ var excuteScript = () => {
 
 var selectTYpe = (text) => {
   document.querySelector('#selectType').innerText = text;
+  document.querySelector('#selectType').value = text;
   convertType = text;
 };
